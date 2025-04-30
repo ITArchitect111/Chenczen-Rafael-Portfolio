@@ -1,4 +1,3 @@
-<script>
 let slideIndex = 0;
 showSlides();
 
@@ -19,4 +18,4 @@ function showSlides() {
   }
   setTimeout(showSlides, 5000); // Change every 5 seconds
 }
-</script>
+
