@@ -16,6 +16,6 @@ function showSlides() {
   if (dots.length > 0) {
     dots[slideIndex - 1].className += " active-dot";
   }
-  setTimeout(showSlides, 5000); // Change every 5 seconds
+  
 }
 
