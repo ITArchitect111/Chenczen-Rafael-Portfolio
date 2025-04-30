@@ -2,10 +2,10 @@ body {
   margin: 0;
   padding: 0;
   background-color: #080808;
-  overflow: visible;
   font-family: 'Poppins', sans-serif;
   scroll-behavior: smooth;
   height: 100vh;
+  overflow-x: hidden;
 }
 
 .star {
@@ -20,35 +20,29 @@ body {
 
 @keyframes twinkle {
   0% {
-    transform: scale(0.8, 0.8);
+    transform: scale(0.8);
     background: rgba(255, 255, 255, 1);
-    animation-timing-function: ease-in;
   }
-
   60% {
-    transform: scale(1, 1);
-    background: rgba(255, 255, 255, 0.0);
-    animation-timing-function: ease-out;
+    transform: scale(1);
+    background: rgba(255, 255, 255, 0);
   }
-
   80% {
+    transform: scale(0.8);
     background: rgba(255, 255, 255, 1);
-    transform: scale(0.8, 0.8);
   }
-
   100% {
-    background: rgba(255, 255, 255, 0.0);
-    transform: scale(1, 1);
+    transform: scale(1);
+    background: rgba(255, 255, 255, 0);
   }
 }
 
 .topnav {
-  overflow: hidden;
-  position: relative;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   padding: 0 20px;
+  position: relative;
 }
 
 .topnav #myLinks {
@@ -66,17 +60,15 @@ body {
 .active {
   font-size: 20px;
   font-weight: bold;
-  padding: 14px 0;
 }
 
 .Hero {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   gap: 2rem;
   padding: 2rem;
-  flex-wrap: wrap;
-
 }
 
 .description {
@@ -85,60 +77,34 @@ body {
 }
 
 .description h1 {
-  font-size: 30px;
-  font-style: normal;
-  font-weight: 700;
+  font-size: clamp(28px, 4vw, 36px);
   color: #f5c71a;
-  line-height: 1;
   text-transform: uppercase;
   margin-bottom: 20px;
 }
 
 .description h2 {
-  overflow: hidden;
-  white-space: nowrap;
-  letter-spacing: 0.1em;
-  font-size: 25px;
+  font-size: clamp(20px, 3vw, 28px);
   font-weight: bold;
   color: #8bf;
-  text-align: left;
+  letter-spacing: 0.1em;
   border-right: 2px solid #FF4500;
+  overflow: hidden;
+  white-space: nowrap;
   width: 0;
-  animation:
-    typing 12s steps(28, end) infinite,
-    blink 0.75s step-end infinite;
+  animation: typing 12s steps(28, end) infinite, blink 0.75s step-end infinite;
 }
 
-/* Typing + pause + deleting */
 @keyframes typing {
-  0% {
-    width: 0;
-  }
-
-  35% {
-    width: 28ch;
-  }
-
-  70% {
-    width: 28ch;
-    /* Hold the full text */
-  }
-
-  100% {
-    width: 0;
-  }
+  0% { width: 0; }
+  35% { width: 28ch; }
+  70% { width: 28ch; }
+  100% { width: 0; }
 }
 
 @keyframes blink {
-
-  0%,
-  100% {
-    border-color: transparent;
-  }
-
-  50% {
-    border-color: #FF4500;
-  }
+  0%, 100% { border-color: transparent; }
+  50% { border-color: #FF4500; }
 }
 
 .description p {
@@ -151,14 +117,13 @@ body {
 
 .description a {
   background: linear-gradient(to right, #5e60ce, #7400b8);
-  border-radius: 50px;
-  padding: 12px 24px;
   color: white;
   font-weight: 600;
-  font-size: 16px;
+  padding: 12px 24px;
+  border-radius: 50px;
+  text-decoration: none;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   transition: background 0.3s ease;
-  text-decoration: none;
 }
 
 .image {
@@ -168,7 +133,6 @@ body {
 
 .image img {
   max-width: 100%;
-  max-height: 100%;
   margin-top: 30px;
 }
 
@@ -192,6 +156,14 @@ body {
   line-height: 1.6;
 }
 
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin: 2rem auto;
+}
+
 .badge-card {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -200,11 +172,10 @@ body {
   padding: 2rem 1.5rem 1.5rem;
   border-radius: 10px;
   text-align: center;
-  position: relative;
   margin: 2rem;
-  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.05);
-  z-index: 1;
+  position: relative;
   transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.05);
 }
 
 .badge-card:hover {
@@ -218,17 +189,16 @@ body {
   top: -30px;
   left: 50%;
   transform: translateX(-50%);
-  padding: 10px;
   width: 60px;
   height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 10px;
 }
 
 .icon-square img {
   max-width: 100%;
-  max-height: 100%;
   object-fit: contain;
 }
 
@@ -236,27 +206,24 @@ body {
   margin-top: 3rem;
   font-size: 30px;
   color: #ff353a;
-  font-weight: bold;
   text-align: left;
 }
 
 .badge-card h3 {
-  margin-top: 2.50rem;
-  font-size: 25x;
+  margin-top: 2.5rem;
+  font-size: 25px;
   color: #ffcb00;
   font-weight: bold;
   text-align: left;
-
 }
 
 .badge-card ul {
   margin-top: 1rem;
   padding-left: 1.2rem;
-  text-align: left;
   font-size: 16px;
-  line-height: 1.5;
   color: #ff51bb;
   font-style: italic;
+  text-align: left;
 }
 
 .fade-in {
@@ -270,20 +237,10 @@ body {
   transform: translateY(0);
 }
 
-.card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  margin: 2rem auto;
-}
-
 .slideshow-container {
   position: relative;
-  margin: 100px;
+  margin: 50px auto;
   max-width: 100%;
-  margin-top: 50px;
-  margin-bottom:50px;
 }
 
 .mySlides {
@@ -292,43 +249,43 @@ body {
 }
 
 .mySlides img {
-  max-width: 100%;
-  max-height: 100%;
-  width:100px;
-  height:70px;
-  margin-top: 20px;
-  margin-bottom:20px;
+  width: 100px;
+  height: 70px;
+  margin: 20px 0;
 }
 
 .text {
   position: absolute;
   bottom: 30px;
-  background-color: rgba(0, 0, 0, 0.6);
-  color: #f2f2f2;
-  padding: 20px;
   width: 100%;
   text-align: center;
+  color: #f2f2f2;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 20px;
 }
 
 .prev,
 .next {
-  cursor: pointer;
   position: absolute;
   top: 50%;
-  width: auto;
   padding: 16px;
   color: white;
   font-weight: bold;
   font-size: 24px;
-  transition: 0.6s ease;
+  cursor: pointer;
   user-select: none;
   background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 0 3px 3px 0;
+  transition: 0.6s ease;
 }
 
 .next {
   right: 0;
   border-radius: 3px 0 0 3px;
+}
+
+.prev {
+  left: 0;
+  border-radius: 0 3px 3px 0;
 }
 
 .prev:hover,
@@ -337,13 +294,10 @@ body {
 }
 
 .Footer {
-  align-items: center;
   text-align: center;
   background: rgba(255, 255, 255, 0.05);
+  padding: 20px 40px;
   margin-top: 20px;
-  padding:20px 40px;
-  height:50px;
-  gap: 2rem;
 }
 
 .Footer p {
@@ -358,8 +312,8 @@ body {
   text-decoration: none;
 }
 
-/* Responsive mobile */
-@media (max-width: 767px) and (max-height: 1000px) {
+/* Responsive Mobile */
+@media (max-width: 767px) {
   .topnav #myLinks {
     display: none;
     flex-direction: column;
@@ -369,17 +323,8 @@ body {
   .topnav a.icon {
     display: block;
     position: absolute;
-    right: 0;
     top: 0;
-  }
-
-  .topnav a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-
-  .topnav a.icon {
-    display: block;
+    right: 0;
   }
 
   .Hero {
@@ -387,53 +332,20 @@ body {
     text-align: center;
   }
 
-  .description,
-  .image {
+  .description, .image {
     width: 100%;
-  }
-
-  .description h1 {
-    font-size: clamp(24px, 4vw, 36px);
-    white-space: normal;
-    margin-top: 50px;
-    margin-bottom: 50px;
-  }
-
-  .description h2 {
-    font-size: clamp(20px, 3vw, 25px);
-    white-space: normal;
-    margin-top: 50px;
-    margin-bottom: 50px;
-  }
-
-  .description p {
-    font-size: clamp(14px, 2vw, 18px);
-    white-space: normal;
-    margin-top: 50px;
-    margin-bottom: 50px;
-  }
-
-  .description a {
-    margin-top: 50px;
-    margin-bottom: 50px;
-  }
-
-  .card-container {
-    flex-direction: column;
-    align-items: center;
-    margin: 20px;
   }
 
   .badge-card {
     width: 90%;
-    margin: 1.5rem 0;
+    margin: 1.5rem auto;
   }
 }
 
+/* Desktop View */
 @media (min-width: 768px) {
   .topnav #myLinks {
     display: flex;
-    justify-content: center;
   }
 
   .topnav a.icon {
