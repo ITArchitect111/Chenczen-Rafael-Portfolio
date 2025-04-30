@@ -332,6 +332,52 @@ body {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
+.Footer {
+  align-items: center;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  margin-top: 20px;
+
+}
+
+.Footer p {
+  color: #00c7ff;
+  font-weight: 200;
+  font-size: 20px;
+}
+
+.Footer a {
+  font-size: 18px;
+  color: #ff353a;
+  text-decoration: none;
+}
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-tiktok {
+  background:black;
+  color:white;
+}
+
+.fa-gmail {
+  background:black;
+  color:white;
+}
 /* Responsive mobile */
 @media (max-width: 767px) and (max-height: 1000px) {
   .topnav #myLinks {
