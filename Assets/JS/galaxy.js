@@ -1,28 +1,27 @@
-function createStar() {
-  const star = document.createElement('div');
-  star.classList.add('star');
-
-  const size = Math.random() * 3 + 1;
-  star.style.width = `${size}px`;
-  star.style.height = `${size}px`;
-
-  const x = Math.random() * window.innerWidth;
-  const y = Math.random() * window.innerHeight;
-  star.style.left = `${x}px`;
-  star.style.top = `${y}px`;
-
-  const animationDuration = Math.random() * 2 + 1;
-  star.style.animationDuration = `${animationDuration}s`;
-  star.style.animationDelay = `${Math.random()}s`;
-
-  document.body.appendChild(star);
-  setTimeout(() => {
-    star.remove();
-  }, animationDuration * 1000 * 1.5);
-}
-
-const numberOfStars = 1000;
-for (let i = 0; i < numberOfStars; i++) {
-  createStar();
-}
-setInterval(createStar, 50); 
+/* ---- particles.js config ---- */
+particlesJS("tech", {
+  "particles": {
+    "number": {
+      "value": 300,
+      "density": {
+        "enable": true,
+        "value_area": 1000
+      }
+    },
+    "color": {
+      "value": ["#356797", "#356797"]
+    },
+    "shape": {
+      "type": "polygon",
+      "stroke": {
+        "width": 0,
+        "color": "#000000"
+      },
+      "polygon": {
+        "nb_sides": 4
+      }
+    },
+    "size": {
+      "value": 5,
+      "random": true,
+      "anim": {
