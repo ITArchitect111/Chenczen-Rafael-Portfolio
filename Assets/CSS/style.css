@@ -9,11 +9,7 @@ body {
   z-index: -1;
 }
 #particles-js {
-  position: fixed;
   z-index: -1;
-  top: 0;
-  left: 0;
-  background-color: #080808;
 }
 body > *:not(#particles-js) {
   position: relative;
