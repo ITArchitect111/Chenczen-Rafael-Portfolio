@@ -1,96 +1,42 @@
-​/* ---- particles.js config ---- */
 particlesJS("particles-js", {
-  "particles": {
-    "number": {
-      "value": 1000,
-      "density": {
-        "enable": true,
-        "value_area": 1000
-      }
+  particles: {
+    number: { value: 80 },
+    color: { value: "#00fff7" },
+    shape: {
+      type: "circle",
     },
-    "color": {
-      "value": ["#356797", "#356797"]
+    opacity: {
+      value: 0.5,
+      random: true,
     },
-    "shape": {
-      "type": "polygon",
-      "stroke": {
-        "width": 0,
-        "color": "#000000"
-      },
-      "polygon": {
-        "nb_sides": 4
-      }
+    size: {
+      value: 3,
+      random: true,
     },
-    "size": {
-      "value": 7,
-      "random": true,
-      "anim": {
-        "enable": true,
-        "speed": 1,
-        "size_min": 1,
-        "sync": false
-      }
+    line_linked: {
+      enable: true,
+      distance: 150,
+      color: "#00fff7",
+      opacity: 0.4,
+      width: 1,
     },
-    "line_linked": {
-      "enable": true,
-      "distance": 170,
-      "color": "#58636d",
-      "opacity": 0.4,
-      "width": 1
+    move: {
+      enable: true,
+      speed: 3,
+      direction: "none",
+      out_mode: "out",
     },
-    "move": {
-      "enable": true,
-      "speed": 2,
-      "direction": "bottom",
-      "random": true,
-      "straight": true,
-      "out_mode": "out",
-      "bounce": false,
-      "attract": {
-        "enable": true,
-        "rotateX": 850,
-        "rotateY": 1740
-      }
-    }
   },
-  "interactivity": {
-    "detect_on": "canvas",
-    "events": {
-      "onhover": {
-        "enable": false,
-        "mode": "grab"
-      },
-      "onclick": {
-        "enable": true,
-        "mode": "repulse"
-      },
-      "resize": true
+  interactivity: {
+    detect_on: "canvas",
+    events: {
+      onhover: { enable: true, mode: "grab" },
+      onclick: { enable: true, mode: "push" },
     },
-    "modes": {
-      "grab": {
-        "distance": 100,
-        "line_linked": {
-          "opacity": 1
-        }
-      },
-      "bubble": {
-        "distance": 400,
-        "size": 45,
-        "duration": 2,
-        "opacity": 8,
-        "speed": 3
-      },
-      "repulse": {
-        "distance": 150,
-        "duration": 0.4
-      },
-      "push": {
-        "particles_nb": 4
-      },
-      "remove": {
-        "particles_nb": 2
-      }
-    }
+    modes: {
+      grab: { distance: 200, line_linked: { opacity: 0.5 } },
+      push: { particles_nb: 4 },
+    },
   },
-  "retina_detect": true
+  retina_detect: true,
 });
